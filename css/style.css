@@ -1,0 +1,111 @@
+:root {
+    /* Aquí irán las fuentes de texto*/
+    --fuente-cursiva: 'Cedarville Cursive', cursive;
+
+    /* Colores */
+    --fondo-principal: rgb(204, 134, 146);
+    --fondo-encabezado: rgba(255, 99, 73, 0.2);
+}
+
+html { /** caja con los bordes incluidos y 1rem = 10px */
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    font-family: var(--fuente-cursiva);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+*,*:before, *:after { 
+    box-sizing: inherit; /** no sé bien pero es para que jale mejor*/
+}
+
+/*? Estos son los elementos globales */
+
+.centrar_texto{
+    text-align: center;
+}
+
+.no-margin{
+    margin: 0 auto;
+}
+
+.contenedor{
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+a{
+    text-decoration: none; /** quita raya del enlace */
+}
+img{
+    max-width: 100%;
+}
+
+/*? Parte para el header */
+
+.header{
+    height: 24rem;
+    background-image: url(../img/fondo-rosa.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.header__navegacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.header__navegacion__elemento{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+.barra{
+    height: 12rem;
+    display: block;
+}
+.header__text--bold{
+    font-size: 5rem;
+}
+
+
+.header__nav_img{
+    max-width: 6rem;
+    border-radius: 10rem;
+}
+
+@media (min-width: 768px){
+    .header{
+        height: 12rem;
+    }
+    .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    .header__navegacion{
+        gap: 4rem;
+        justify-content: space-between;
+    }
+}
+
+/*? Cuerpo del contenido principal */
+main{
+    background-image: url(/img/prueba2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -81,6 +81,9 @@ img{
     font-size: 5rem;
 }
 
+.header__text a h1{
+    font-size: 2.5rem; 
+}
 
 .header__nav_img{
     max-width: 6rem;
@@ -93,13 +96,20 @@ img{
     }
     .barra{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex-direction: row;
+        gap: 4rem;
     }
     .header__navegacion{
         gap: 4rem;
         justify-content: space-between;
+    }
+}
+
+@media (min-width: 390px){
+    .header__text a h1{
+        font-size: 3rem; 
     }
 }
 
@@ -108,4 +118,10 @@ main{
     background-image: url(/img/prueba2.png);
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 3rem;
+}
+@media (min-width: 768px){
+    main{
+        padding-top: 1rem;
+    }
 }

@@ -3,8 +3,9 @@
     --fuente-cursiva: 'Cedarville Cursive', cursive;
 
     /* Colores */
-    --fondo-principal: rgb(204, 134, 146);
-    --fondo-encabezado: rgba(255, 99, 73, 0.2);
+    --fondo-principal: rgb(182, 121, 131);
+    --fondo-encabezado: rgb(255, 177, 203);
+    --fondo-encabezado-bajo: rgb(255, 213, 227);
 }
 
 html { /** caja con los bordes incluidos y 1rem = 10px */
@@ -52,11 +53,35 @@ img{
 /*? Parte para el header */
 
 .header{
+    /*! esta parte es para mantener fija el encabezado*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+    /*!  */
+    
     height: 24rem;
-    background-image: url(../img/fondo-rosa.png);
+    background: linear-gradient(to top , var(--fondo-encabezado), var(--fondo-principal));
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+.barra{
+    height: 16rem;
+    display: block;
+}
+.header__text--bold{
+    font-size: 5rem;
+}
+
+.header__text a h1{
+    font-size: 2.5rem; 
+}
+.header__text__elemento{
+    display: flex;
+    flex-direction: column;
 }
 .header__navegacion{
     display: flex;
@@ -73,30 +98,20 @@ img{
     padding-top: 0.5rem;
 }
 
-.barra{
-    height: 12rem;
-    display: block;
-}
-.header__text--bold{
-    font-size: 5rem;
-}
-
-.header__text a h1{
-    font-size: 2.5rem; 
-}
 
 .header__nav_img{
-    max-width: 6rem;
+    max-width: 7rem;
+    max-height: 8rem;
     border-radius: 10rem;
 }
 
 @media (min-width: 768px){
     .header{
-        height: 12rem;
+        height: 16rem;
     }
     .barra{
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         flex-direction: row;
         gap: 4rem;
@@ -107,18 +122,45 @@ img{
     }
 }
 
-@media (min-width: 390px){
+@media (min-width: 500px){
     .header__text a h1{
-        font-size: 3rem; 
+        font-size: 3.6rem; 
+    }
+}
+@media (min-width: 768px){
+    .header__text a h1{
+        font-size: 3.2rem; 
+    }
+}
+@media (min-width: 890px){
+    .header__text a h1{
+        font-size: 3.8rem; 
+    }
+}
+@media (min-width: 990px){
+    .header__text a h1{
+        font-size: 4.6rem; 
     }
 }
 
+
 /*? Cuerpo del contenido principal */
 main{
+    background: linear-gradient(to bottom, var(--fondo-encabezado), var(--fondo-encabezado-bajo));
+}
+.contenedor_principal{
     background-image: url(/img/prueba2.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 3rem;
+    border-radius: 5rem;
+
+    margin-top: 24rem;
+}
+@media (min-width: 768px){
+    .contenedor_principal{
+        margin-top: 12rem;
+    }
 }
 @media (min-width: 768px){
     main{
